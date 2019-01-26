@@ -19,5 +19,9 @@
   "homepage": "https://github.com/shivam90ag/DBTouch#readme",
   "devDependencies": {
     "electron": "^4.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "font-awesome": "^4.7.0"
   }
 }

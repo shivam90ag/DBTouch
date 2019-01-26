@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>DBTouch</title>
+</head>
+
+<body>
+    <div class="container-fluid no-padding">
+        <!-- top header -->
+        <div class="row header no-margin">
+            <div class="pr-0px col col-xs-7">
+                <h4 class="mt-0px mb-0px mr-30" style="width: 65%;">
+                    DBTouch
+                    <span class="cursor-pointer" ><i class="fa fa-database"></i></span>
+                </h4>
+            </div>
+            <div class="pl-0px col col-xs-5">
+                <div class="float-right">
+                    <span class="cursor-pointer" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="font-xs">&nbsp;&nbsp;Shivam&nbsp;&nbsp;</span>
+                        <span class="caret" style="min-width: 0px;"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li class="cursor-pointer"><a>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end of header -->
+
+        <!-- menu -->
+        <div id="MainMenu" class="vertical-menubar responsive-width">
+            <div class="mb-50 mt-20">
+                <div class="list-group panel no-border">
+                    <a class="list-group-item" data-parent="#MainMenu" [routerLinkActive]="['active']" [routerLink]="['/dashboard']">
+                        <!-- <i class="fa fa-dashboard"></i> -->
+                        <span>Data Server</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="election-main-content">
+        <div class="container-fluid">
+            <div id="content">
+                Hello world
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
