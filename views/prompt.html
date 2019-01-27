@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <meta charset=utf-8>
+    <title>DB Connection</title>
+</head>
+
+<body>
+    <p id="label"></p>
+    <div class="row" style="margin:10px">
+        <form id="connectionForm">
+        <div class="col-12">
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="Name">Name</label>
+                    <input type="text" name="Name" value="" id="Name" placeholder="Name" class="form-control  form-control-sm"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="URL">URL</label>
+                    <input type="text" name="URL" value="" id="URL" placeholder="URL" class="form-control  form-control-sm"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="port">Port</label>
+                    <input type="text" name="port" value="" id="port" placeholder="Port" class="form-control  form-control-sm"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="port">Username</label>
+                    <input type="text" name="Username" value="" id="Username" placeholder="Username" class="form-control  form-control-sm"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="port">Password</label>
+                    <input type="password" name="port" value="" id="port" placeholder="Password" class="form-control  form-control-sm"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12">
+                    <div class="float-right">
+                        <button type="button" class="btn btn-sm btn-primary" id="modalOk" onclick="ok()">OK</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="modalCancel" onclick="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    <script>
+        const { ipcRenderer } = require("electron")
+        
+        function ok() {
+            ipcRenderer.send("closeDialog", document.getElementById("connectionForm").value)
+            this.close();
+        }
+        function cancel() {
+            ipcRenderer.send("closeDialog", "")
+            this.close();
+        }
+    </script>
+</body>
+
+</html>
